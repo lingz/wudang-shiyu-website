@@ -10,10 +10,10 @@
  * Add theme support for Infinite Scroll.
  * See: http://jetpack.me/support/infinite-scroll/
  */
-function odeh_web_programming_jetpack_setup() {
+function wudang_shiyu_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'footer'    => 'page',
 	) );
 }
-add_action( 'after_setup_theme', 'odeh_web_programming_jetpack_setup' );
+add_action( 'after_setup_theme', 'wudang_shiyu_jetpack_setup' );

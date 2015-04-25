@@ -15,10 +15,11 @@ get_header(); ?>
 
 
       <?php
+        // By default, get the slug 
         the_title();
         the_content();
-        
-        echo str_repeat("Hello World there!", 1000);
+
+        echo str_repeat("Front page!", 1000);
       ?>
 
 <?php get_footer(); ?>

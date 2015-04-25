@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'odeh_web_programming_setup' ) ) :
+if ( ! function_exists( 'wudang_shiyu_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,7 +20,7 @@ if ( ! function_exists( 'odeh_web_programming_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function odeh_web_programming_setup() {
+function wudang_shiyu_setup() {
 
 	/*
 	 * Make theme available for translation.
@@ -62,20 +62,20 @@ function odeh_web_programming_setup() {
 	) );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'odeh_web_programming_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'wudang_shiyu_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
-endif; // odeh_web_programming_setup
-add_action( 'after_setup_theme', 'odeh_web_programming_setup' );
+endif; // wudang_shiyu_setup
+add_action( 'after_setup_theme', 'wudang_shiyu_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function odeh_web_programming_widgets_init() {
+function wudang_shiyu_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'wudang-shiyu' ),
 		'id'            => 'sidebar-1',
@@ -86,12 +86,12 @@ function odeh_web_programming_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'odeh_web_programming_widgets_init' );
+add_action( 'widgets_init', 'wudang_shiyu_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function odeh_web_programming_scripts() {
+function wudang_shiyu_scripts() {
 	wp_enqueue_style( 'wudang-shiyu-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'wudang-shiyu-sidebar', get_template_directory_uri() . '/js/sidebar.js', array(), '20141121', true );
@@ -102,7 +102,7 @@ function odeh_web_programming_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'odeh_web_programming_scripts' );
+add_action( 'wp_enqueue_scripts', 'wudang_shiyu_scripts' );
 
 /**
  * Implement the Custom Header feature.

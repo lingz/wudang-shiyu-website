@@ -30,7 +30,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php odeh_web_programming_paging_nav(); ?>
+			<?php wudang_shiyu_paging_nav(); ?>
 
 		<?php else : ?>
 

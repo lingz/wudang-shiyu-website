@@ -22,7 +22,7 @@ get_header(); ?>
 
 					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-					<?php if ( odeh_web_programming_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
+					<?php if ( wudang_shiyu_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
 						<h2 class="widget-title"><?php _e( 'Most Used Categories', 'wudang-shiyu' ); ?></h2>
 						<ul>

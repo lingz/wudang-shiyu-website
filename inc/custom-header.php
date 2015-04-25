@@ -18,31 +18,31 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses odeh_web_programming_header_style()
- * @uses odeh_web_programming_admin_header_style()
- * @uses odeh_web_programming_admin_header_image()
+ * @uses wudang_shiyu_header_style()
+ * @uses wudang_shiyu_admin_header_style()
+ * @uses wudang_shiyu_admin_header_image()
  */
-function odeh_web_programming_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'odeh_web_programming_custom_header_args', array(
+function wudang_shiyu_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'wudang_shiyu_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'odeh_web_programming_header_style',
-		'admin-head-callback'    => 'odeh_web_programming_admin_header_style',
-		'admin-preview-callback' => 'odeh_web_programming_admin_header_image',
+		'wp-head-callback'       => 'wudang_shiyu_header_style',
+		'admin-head-callback'    => 'wudang_shiyu_admin_header_style',
+		'admin-preview-callback' => 'wudang_shiyu_admin_header_image',
 	) ) );
 }
-add_action( 'after_setup_theme', 'odeh_web_programming_custom_header_setup' );
+add_action( 'after_setup_theme', 'wudang_shiyu_custom_header_setup' );
 
-if ( ! function_exists( 'odeh_web_programming_header_style' ) ) :
+if ( ! function_exists( 'wudang_shiyu_header_style' ) ) :
 /**
  * Styles the header image and text displayed on the blog
  *
- * @see odeh_web_programming_custom_header_setup().
+ * @see wudang_shiyu_custom_header_setup().
  */
-function odeh_web_programming_header_style() {
+function wudang_shiyu_header_style() {
 	$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -75,15 +75,15 @@ function odeh_web_programming_header_style() {
 	</style>
 	<?php
 }
-endif; // odeh_web_programming_header_style
+endif; // wudang_shiyu_header_style
 
-if ( ! function_exists( 'odeh_web_programming_admin_header_style' ) ) :
+if ( ! function_exists( 'wudang_shiyu_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * @see odeh_web_programming_custom_header_setup().
+ * @see wudang_shiyu_custom_header_setup().
  */
-function odeh_web_programming_admin_header_style() {
+function wudang_shiyu_admin_header_style() {
 ?>
 	<style type="text/css">
 		.appearance_page_custom-header #headimg {
@@ -103,15 +103,15 @@ function odeh_web_programming_admin_header_style() {
 	</style>
 <?php
 }
-endif; // odeh_web_programming_admin_header_style
+endif; // wudang_shiyu_admin_header_style
 
-if ( ! function_exists( 'odeh_web_programming_admin_header_image' ) ) :
+if ( ! function_exists( 'wudang_shiyu_admin_header_image' ) ) :
 /**
  * Custom header image markup displayed on the Appearance > Header admin panel.
  *
- * @see odeh_web_programming_custom_header_setup().
+ * @see wudang_shiyu_custom_header_setup().
  */
-function odeh_web_programming_admin_header_image() {
+function wudang_shiyu_admin_header_image() {
 	$style = sprintf( ' style="color:#%s;"', get_header_textcolor() );
 ?>
 	<div id="headimg">
@@ -123,4 +123,4 @@ function odeh_web_programming_admin_header_image() {
 	</div>
 <?php
 }
-endif; // odeh_web_programming_admin_header_image
+endif; // wudang_shiyu_admin_header_image
