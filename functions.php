@@ -8,6 +8,9 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
+define( 'WP_DEBUG', true );
+
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }

@@ -15,11 +15,34 @@ get_header(); ?>
 
 
       <?php
-        // By default, get the slug 
-        the_title();
-        the_content();
+        $frontpage_id = get_option('page_on_front');
+        $frontpage_page = get_post($frontpage_id);
+        $blog_id = get_option('page_for_posts');
 
-        echo str_repeat("Front page!", 1000);
+        echo $frontpage_page->post_content;
+
+        $recent_news = new WP_Query( "posts_per_page=5" );
       ?>
+      
+      <?php if ( $recent_news->have_posts() ) { ?>
+          <h1>Recent News</h1>
+
+          <?php /* Start the Loop */ ?>
+          <?php while ( $recent_news->have_posts() ) : $recent_news->the_post(); ?>
+
+            <?php
+              /* Include the Post-Format-specific template for the content.
+               * If you want to overload this in a child theme then include a file
+               * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+               */
+              get_template_part( 'content', get_post_format() );
+            ?>
+
+          <?php endwhile; ?>
+          <a class="post-nav" href="<?php echo get_permalink($blog_id); ?>">Read More</a>
+        <?php } ?>
+
+
+
 
 <?php get_footer(); ?>
