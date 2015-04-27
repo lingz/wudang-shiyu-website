@@ -32,5 +32,6 @@
   <a href="<?php echo get_permalink($frontpage_id); ?>">
     <img id="header" src="<?php echo get_template_directory_uri(); ?>/images/header.jpg" alt="Wudang Traditional Martial Arts School">
   </a>
+<div id="main">
   <?php get_sidebar(); ?>
   <div id="content">

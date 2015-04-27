@@ -91,6 +91,12 @@ function wudang_shiyu_widgets_init() {
 }
 add_action( 'widgets_init', 'wudang_shiyu_widgets_init' );
 
+add_filter( 'script_loader_tag', function ( $tag, $handle ) {
+
+
+    return str_replace( ' src', ' defer="defer" src', $tag );
+}, 10, 2 );
+
 /**
  * Enqueue scripts and styles.
  */
@@ -99,11 +105,11 @@ function wudang_shiyu_scripts() {
 
 	wp_enqueue_script( 'wudang-shiyu-sidebar', get_template_directory_uri() . '/js/sidebar.js', array(), '20141121', true );
 
-	wp_enqueue_script( 'wudang-shiyu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	//wp_enqueue_script( 'wudang-shiyu-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+	//if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		//wp_enqueue_script( 'comment-reply' );
+	//}
 }
 add_action( 'wp_enqueue_scripts', 'wudang_shiyu_scripts' );
 

@@ -9,6 +9,7 @@
 ?>
 
 </div><!-- #content -->
+</div>
 <div id="footer" class="pure-g" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/footer.jpg')">
   <div class="pure-u-1 pure-u-md-1-2">
     <h3>Contact</h3>

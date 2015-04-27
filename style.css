@@ -60,6 +60,10 @@ h1, h2, h3, h4, h5, h6 {
   color: #415133;
 }
 
+#main {
+  overflow: auto;
+}
+
 #layout {
   width: 100%;
   margin: 0 auto;
@@ -131,8 +135,6 @@ The content `<div>` is where all your content goes.
     max-width: 800px;
     margin-bottom: 50px;
     line-height: 1.6em;
-    margin-bottom: -100%; /* Makes columns same height */
-    padding-bottom: 100%; /* Makes columns same height */
 }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
@@ -155,7 +157,7 @@ The content `<div>` is where all your content goes.
     margin-bottom: 10px;
 }
 
-#content h4, h5, h6 {
+#content h4, #content h5, #content h6 {
     font-weight: 300;
 }
 
@@ -166,8 +168,6 @@ The content `<div>` is where all your content goes.
     float: none;
     position: fixed;
     margin-left: -250px; /* "#menu" width */
-    margin-bottom: -100%; /* Makes columns same height */
-    padding-bottom: 100%; /* Makes columns same height */
     width: 250px;
     top: 0;
     left: 0;
@@ -285,16 +285,12 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 @media (min-width: 48em) {
 
     #content {
-        padding-bottom: 0; /* Makes columns same height */
-        margin-bottom: 0; /* Makes columns same height */
         margin-left: 250px;
         padding-left: 2em;
         padding-right: 2em;
     }
 
     #menu {
-        padding-bottom: 0; /* Makes columns same height */
-        margin-bottom: 0; /* Makes columns same height */
         position: relative;
         float: left;
         left: 250px;
