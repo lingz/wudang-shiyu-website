@@ -20,7 +20,7 @@
   <div class="pure-u-1 pure-u-md-1-2">
     <h3>Address</h3>
       <div>
-        <span>(English)</span> Wudang Daoist Kung Fu Academy, Wudangshan Scenic Zone, Shiyan City, Hubei Province , China
+        <span>(English)</span> Wudang Daoist Martial Arts Academy, Huilong Guan, Wudangshan Scenic Zone, Shiyan City, Hubei Province , China
       </div>
       <div>
         <span>(Chinese)</span> 中国湖北省十堰市武当山特区武当道家功夫馆 
