@@ -15,11 +15,37 @@ Tags:
 * {
   box-sizing: border-box;
 }
-body {
-  color: #777;
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 300;
+body, #footer.pure-g div {
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(50, 50, 50);
 }
+
+h1, h2, h3, h4, h5, h6, #menu {
+  font-family: 'Martel', serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: #748466;
+}
+
+a h1, a h2, a h3, a h4, a h5, a h6 {
+  color: #748466;
+}
+
+a:visited {
+  color: #748466;
+}
+
+a:hover {
+  color: #415133;
+}
+
+a h1:hover, a h2:hover, a h3:hover, a h4:hover, a h5:hover, a h6:hover {
+  color: #415133;
+}
+
 
 html, body {
   height: 100%;
@@ -31,7 +57,7 @@ html, body {
     height: auto;
 }
 h1, h2, h3, h4, h5, h6 {
-  color: #ca3c3c;
+  color: #415133;
 }
 
 #layout {
@@ -44,6 +70,19 @@ h1, h2, h3, h4, h5, h6 {
 #header {
   width: 100%;
   height: auto;
+}
+
+#footer {
+  margin-top: 2em;
+  padding: 2em 2em;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+    -moz-background-size: cover;
+      -o-background-size: cover;
+  background-position: center;
+  font-weight: 700;
+  text-align: center;
 }
 
 
@@ -73,22 +112,22 @@ This is the parent `<div>` that contains the menu and the content area.
 }
     #layout.active {
         position: relative;
-        left: 200px;
+        left: 250px;
     }
         #layout.active #menu {
-            left: 200px;
-            width: 200px;
+            left: 250px;
+            width: 250px;
         }
 
         #layout.active .menu-link {
-            left: 200px;
+            left: 250px;
         }
 /*
 The content `<div>` is where all your content goes.
 */
 #content {
     margin: 0 auto;
-    padding: 0 2em;
+    padding: 0.6em 2em;
     max-width: 800px;
     margin-bottom: 50px;
     line-height: 1.6em;
@@ -97,9 +136,27 @@ The content `<div>` is where all your content goes.
 }
 
 #content h1, #content h2, #content h3, #content h4, #content h5, #content h6 {
-    margin: 50px 0 20px 0;
+    margin: 20px 0 20px 0;
+}
+
+#content h1 {
+    margin-bottom: 40px;
+}
+
+#content .entry-title {
+    margin-bottom: 0px;
+}
+
+.entry-content p {
+    margin-bottom: 0px;
+}
+
+.entry-content {
+    margin-bottom: 10px;
+}
+
+#content h4, h5, h6 {
     font-weight: 300;
-    color: #ca3c3c;
 }
 
 
@@ -108,25 +165,29 @@ The content `<div>` is where all your content goes.
 #menu {
     float: none;
     position: fixed;
-    margin-left: -200px; /* "#menu" width */
+    margin-left: -250px; /* "#menu" width */
     margin-bottom: -100%; /* Makes columns same height */
     padding-bottom: 100%; /* Makes columns same height */
-    width: 200px;
+    width: 250px;
     top: 0;
     left: 0;
     bottom: 0;
     z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: #eeeeee;
     overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
 }
     /*
     All anchors inside the menu should be styled like this.
     */
     #menu a {
-        color: #666666;
+        color: rgb(50, 50, 50);
         border: none;
         padding: 0.6em 0 0.6em 0.6em;
+        font-size: 1.25em;
+    }
+    #menu a:hover {
+        color: #415133;
     }
 
     /*
@@ -138,20 +199,12 @@ The content `<div>` is where all your content goes.
         background: transparent;
     }
 
-    /*
-    Add that light border to separate items into groups.
-    */
-    #menu .pure-menu ul,
-    #menu .pure-menu .menu-item-divided {
-        border-top: 1px solid #333;
-    }
         /*
         Change color of the anchor links on hover/focus.
         */
         #menu .pure-menu li a:hover,
         #menu .pure-menu li a:focus {
-            background: #ee6363;
-            color: white;
+            background: white;
         }
 
     /*
@@ -159,26 +212,14 @@ The content `<div>` is where all your content goes.
     */
     #menu .pure-menu-selected,
     {
-        background: #ca3c3c;
+        background: #748466;
     }
-        /*
-        This styles a link within a selected menu item `<li>`.
-        */
-        #menu .pure-menu-selected a {
-            color: #fff;
-        }
 
     /*
     This styles the menu heading.
     */
-    #menu .pure-menu-heading {
-        font-size: 110%;
-        color: #fff;
-        margin: 0;
-    }
-    #menu .active {
-        background: #ca3c3c;
-        color: #fff;
+    #menu .pure-menu li a.active {
+        color: #748466;
     }
 
 /* -- Dynamic Button For Responsive Menu -------------------------------------*/
@@ -219,7 +260,6 @@ small screens.
     .menu-link span,
     .menu-link span:before,
     .menu-link span:after {
-        background-color: #fff;
         width: 100%;
         height: 0.2em;
     }
@@ -246,7 +286,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     #content {
         padding-bottom: 0; /* Makes columns same height */
         margin-bottom: 0; /* Makes columns same height */
-        margin-left: 200px;
+        margin-left: 250px;
         padding-left: 2em;
         padding-right: 2em;
     }
@@ -256,7 +296,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         margin-bottom: 0; /* Makes columns same height */
         position: relative;
         float: left;
-        left: 200px;
+        left: 250px;
     }
 
     .menu-link {
@@ -268,41 +308,4 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     #layout.active {
         position: static;
     }
-}
-
-/* --- More sidebar styles --*/
-
-.group-node {
-  display: none;
-  border-width: 0 0 1px 0;
-  border-color: #ee6363;
-  border-style: solid;
-}
-#menu .group-header {
-  display: block;
-  border-width: 0 0 1px 0;
-  border-color: #ee6363;
-  border-style: solid;
-}
-.group-header:hover {
-  background: #ee6363;
-  color: white;
-}
-#menu .group-header.expanded {
-  background: #ee6363;
-  color: white;
-}
-.group-header .up-arrow {
-  display: none;
-}
-.group-header.expanded .down-arrow {
-  display: none;
-}
-.group-header.expanded .up-arrow {
-  display: inline;
-}
-
-
-.visible {
-  display: block;
 }

@@ -68,7 +68,7 @@ if ( ! function_exists( 'wudang_shiyu_posted_on' ) ) :
 function wudang_shiyu_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -80,7 +80,7 @@ function wudang_shiyu_posted_on() {
 
 	$posted_on = sprintf(
 		_x( 'Posted on %s', 'post date', 'wudang-shiyu' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		$time_string
 	);
 
 	$byline = sprintf(
@@ -99,27 +99,27 @@ if ( ! function_exists( 'wudang_shiyu_entry_footer' ) ) :
  */
 function wudang_shiyu_entry_footer() {
 	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'wudang-shiyu' ) );
-		if ( $categories_list && wudang_shiyu_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'wudang-shiyu' ) . '</span>', $categories_list );
-		}
+	//if ( 'post' == get_post_type() ) {
+		//[> translators: used between list items, there is a space after the comma <]
+		//$categories_list = get_the_category_list( __( ', ', 'wudang-shiyu' ) );
+		//if ( $categories_list && wudang_shiyu_categorized_blog() ) {
+			//printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'wudang-shiyu' ) . '</span>', $categories_list );
+		//}
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'wudang-shiyu' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'wudang-shiyu' ) . '</span>', $tags_list );
-		}
-	}
+		//[> translators: used between list items, there is a space after the comma <]
+		//$tags_list = get_the_tag_list( '', __( ', ', 'wudang-shiyu' ) );
+		//if ( $tags_list ) {
+			//printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'wudang-shiyu' ) . '</span>', $tags_list );
+		//}
+	//}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'wudang-shiyu' ), __( '1 Comment', 'wudang-shiyu' ), __( '% Comments', 'wudang-shiyu' ) );
-		echo '</span>';
-	}
+	//if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		//echo '<span class="comments-link">';
+		//comments_popup_link( __( 'Leave a comment', 'wudang-shiyu' ), __( '1 Comment', 'wudang-shiyu' ), __( '% Comments', 'wudang-shiyu' ) );
+		//echo '</span>';
+	//}
 
-	edit_post_link( __( 'Edit', 'wudang-shiyu' ), '<span class="edit-link">', '</span>' );
+	//edit_post_link( __( 'Edit', 'wudang-shiyu' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 

@@ -8,6 +8,10 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
+
+function is_active_page($pageId) {
+  return (is_page($pageId)) || (is_home() && $pageId == get_option("page_for_posts"));
+}
 ?>
 
 <a href="#menu" id="menuLink" class="menu-link">
@@ -24,7 +28,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
             $pages_query->the_post();
             global $post;
             ?>
-              <li><a class="<?php echo (is_page($post->ID) ? "active" : ""); ?>" href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a></li>
+              <li><a class="<?php echo (is_active_page($post->ID) ? "active" : ""); ?>" href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title($post->ID); ?></a></li>
             <?php
           endwhile;
       ?>

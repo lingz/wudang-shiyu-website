@@ -19,7 +19,11 @@ get_header(); ?>
         $frontpage_page = get_post($frontpage_id);
         $blog_id = get_option('page_for_posts');
 
-        echo $frontpage_page->post_content;
+        $content = $frontpage_page->post_content;
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        echo $content;
+
 
         $recent_news = new WP_Query( "posts_per_page=5" );
       ?>
@@ -39,7 +43,11 @@ get_header(); ?>
             ?>
 
           <?php endwhile; ?>
-          <a class="post-nav" href="<?php echo get_permalink($blog_id); ?>">Read More</a>
+          <a class="post-nav" href="<?php echo get_permalink($blog_id); ?>">
+            <h2>
+              Read More
+            </h2>
+          </a>
         <?php } ?>
 
 

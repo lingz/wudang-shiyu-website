@@ -15,9 +15,16 @@ get_header(); ?>
 
     <?php
         $blog_id = get_option('page_for_posts');
+        $blog_page = get_post($blog_id);
     ?>
 
     <h1><?php echo get_the_title($blog_id); ?></h1>
+    <?php
+        $content = $blog_page->post_content;
+        $content = apply_filters('the_content', $content);
+        $content = str_replace(']]>', ']]&gt;', $content);
+        echo $content;
+    ?>
 
     <?php if ( have_posts() ) { ?>
 
@@ -33,8 +40,16 @@ get_header(); ?>
           ?>
 
         <?php endwhile; ?>
-        <div class="nav-previous post-nav"><?php next_posts_link( 'Older posts' ); ?></div>
-        <div class="nav-next post-nav"><?php previous_posts_link( 'Newer posts' ); ?></div>
+        <div class="nav-previous post-nav">
+          <h1>
+            <?php next_posts_link( 'Older posts' ); ?>
+          </h1>
+        </div>
+        <div class="nav-next post-nav">
+          <h1>
+            <?php previous_posts_link( 'Newer posts' ); ?>
+          </h1>
+        </div>
       <?php } else { ?>
         <h2>No Posts</h2>
       <?php } ?>
