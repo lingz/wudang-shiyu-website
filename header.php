@@ -17,7 +17,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
-<link href='http://fonts.googleapis.com/css?family=Martel|Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Martel|Open+Sans' rel='stylesheet' type='text/css'>
 
 
 <?php wp_head(); ?>
