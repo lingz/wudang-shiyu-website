@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
 <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
 <link href='http://fonts.useso.com/css?family=Martel|Open+Sans' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 
 
 <?php wp_head(); ?>
